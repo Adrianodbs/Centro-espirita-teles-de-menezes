@@ -1,5 +1,14 @@
+import GlobalStyle from './styles/global'
+import { ThemeProvider } from 'styled-components'
+import { theme } from './styles/theme'
+
 function App() {
-  return <div>Centro espírita</div>
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <h1>Centro</h1>
+    </ThemeProvider>
+  )
 }
 
 export default App
