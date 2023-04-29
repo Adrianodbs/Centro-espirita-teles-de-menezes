@@ -12,9 +12,9 @@ function Header() {
 
       <ul>
         <Link to="/">Início</Link>
-        <Link to="/sobre">Sobre nós</Link>
+        <Link to="/sobre">Conteúdo</Link>
         <Link className="contato" to="/contato">
-          Contato
+          Sobre nós
         </Link>
       </ul>
     </StyledHeader>
@@ -27,7 +27,9 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 0 60px;
-  background-color: #fff;
+  background-color: transparent;
+  position: relative;
+  z-index: 99;
 
   @media (max-width: 900px) {
     padding: 0 20px;
@@ -43,7 +45,7 @@ const StyledHeader = styled.header`
   }
 
   a {
-    color: ${p => p.theme.primario};
+    color: #fff;
     transition: all 0.2s;
     padding: 5px 10px;
     font-size: 18px;
@@ -58,8 +60,8 @@ const StyledHeader = styled.header`
   }
 
   .contato {
-    background-color: #fff;
-    color: ${p => p.theme.primario};
+    background-color: ${p => p.theme.primario};
+    color: #fff;
     border-radius: 4px;
   }
 `
@@ -70,7 +72,7 @@ const StyledLogo = styled.div`
   gap: 10px;
   h3 {
     letter-spacing: 2px;
-    color: ${p => p.theme.primario};
+    color: #fff;
 
     @media (max-width: 760px) {
       font-size: 14px;

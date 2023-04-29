@@ -1,13 +1,14 @@
-import espiritualidade from '../../../public/img/espiritualidade.jpg'
+import amarelo from '../../../public/img/amarelo.jpg'
 import * as C from './style'
 
 function Home() {
   return (
     <C.Container>
       <C.Hero>
-        <img src={espiritualidade} alt="Homem agradecendo ao senhor" />
+        <img src={amarelo} alt="Homem agradecendo ao senhor" />
         <h1>
-          Um texto com alguma citação espírita <br /> <span>Autor</span>
+          Não exija dos outros, qualidades que ainda não possui.
+          <br /> <span>Chico Xavier</span>
         </h1>
       </C.Hero>
       <h1>testando</h1>
