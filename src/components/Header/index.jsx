@@ -1,4 +1,3 @@
-import Logo from '../../../public/img/logo.jpg'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -6,7 +5,6 @@ function Header() {
   return (
     <StyledHeader>
       <StyledLogo>
-        <img src={Logo} alt="Logo" />
         <h3>Centro espírita Teles de Menezes</h3>
       </StyledLogo>
 
@@ -33,6 +31,10 @@ const StyledHeader = styled.header`
 
   @media (max-width: 900px) {
     padding: 0 20px;
+  }
+
+  @media (max-width: 560px) {
+    justify-content: center;
   }
 
   ul {
@@ -70,6 +72,10 @@ const StyledLogo = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+
+  @media (max-width: 560px) {
+    display: none;
+  }
   h3 {
     letter-spacing: 2px;
     color: #fff;
