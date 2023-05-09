@@ -3,12 +3,15 @@ import * as C from './style'
 import icon1 from '../../../public/img/icon-1.png'
 import icon2 from '../../../public/img/icon-2.png'
 import icon3 from '../../../public/img/icon-3.png'
+import HeaderSection from '../HeaderSection'
 
 function Atuacao() {
   return (
     <C.Atuacao>
-      <h5>Nossa área de atuação</h5>
-      <h4>Faça parte também dessa comunidade!</h4>
+      <HeaderSection
+        texto1="Nossa área de atuação"
+        texto2="Faça parte também dessa comunidade!"
+      />
       <div className="atuacaoContent">
         <div className="contentItem">
           <img src={icon1} alt="exemplo 1" />
