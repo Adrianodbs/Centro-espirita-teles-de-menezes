@@ -40,3 +40,5 @@ export const Hero = styled.div`
     }
   }
 `
+
+export const Footer = styled.footer``

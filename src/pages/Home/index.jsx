@@ -1,5 +1,7 @@
 import amarelo from '../../../public/img/amarelo.jpg'
 import * as C from './style'
+import { db } from '../../firebase/config'
+import { Link } from 'react-router-dom'
 
 function Home() {
   return (
@@ -12,6 +14,9 @@ function Home() {
         </h1>
       </C.Hero>
       <h1>testando</h1>
+      <C.Footer>
+        <Link to="/login">Admin</Link>
+      </C.Footer>
     </C.Container>
   )
 }
