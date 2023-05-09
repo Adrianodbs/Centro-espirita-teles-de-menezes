@@ -10,8 +10,8 @@ function Header() {
 
       <ul>
         <Link to="/">Início</Link>
-        <Link to="/sobre">Conteúdo</Link>
-        <Link className="contato" to="/contato">
+        <Link to="/conteudo">Conteúdo</Link>
+        <Link className="contato" to="/sobre">
           Sobre nós
         </Link>
       </ul>
