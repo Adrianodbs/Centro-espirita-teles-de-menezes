@@ -6,6 +6,8 @@ import { useAuthValue } from '../../context/AuthContext'
 
 function Header() {
   const { user } = useAuthValue()
+
+  const { logout } = useAuthentication()
   return (
     <StyledHeader>
       <StyledLogo>
@@ -20,6 +22,11 @@ function Header() {
           <Link className="contato" to="/conteudo/criar">
             Postar
           </Link>
+        )}
+        {user && (
+          <li>
+            <button onClick={logout}>Sair</button>
+          </li>
         )}
       </ul>
     </StyledHeader>

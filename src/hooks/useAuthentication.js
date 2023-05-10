@@ -7,14 +7,19 @@ export function useAuthentication() {
   const [cancelled, setCancelled] = useState(false)
   const auth = getAuth()
 
-  useEffect(() => {
-    // Restante do código...
-  }, [])
-
   function checkIfIsCancelled() {
     if (cancelled) return
   }
 
-  // Retornar um objeto com a propriedade 'auth'
-  return { auth }
+  const logout = () => {
+    checkIfIsCancelled()
+
+    signOut(auth)
+  }
+
+  useEffect(() => {
+    return () => setCancelled(true)
+  }, [])
+
+  return { auth, logout }
 }
