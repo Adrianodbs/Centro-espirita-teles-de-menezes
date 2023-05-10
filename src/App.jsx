@@ -10,20 +10,25 @@ import Login from './pages/Login'
 import Conteudo from './pages/Conteudo'
 import Sobre from './pages/Sobre'
 
+//context
+import { AuthProvider } from './context/AuthContext'
+
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/conteudo" element={<Conteudo />} />
-          <Route path="/sobre" element={<Sobre />} />
-        </Routes>
-      </BrowserRouter>
-    </ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/conteudo" element={<Conteudo />} />
+            <Route path="/sobre" element={<Sobre />} />
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
+    </AuthProvider>
   )
 }
 
