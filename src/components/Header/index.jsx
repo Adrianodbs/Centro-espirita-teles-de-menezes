@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
+import { useAuthentication } from '../../hooks/useAuthentication'
+import { useAuthValue } from '../../context/AuthContext'
+
 function Header() {
+  const { user } = useAuthValue()
   return (
     <StyledHeader>
       <StyledLogo>
@@ -11,9 +15,12 @@ function Header() {
       <ul>
         <Link to="/">Início</Link>
         <Link to="/conteudo">Conteúdo</Link>
-        <Link className="contato" to="/sobre">
-          Sobre nós
-        </Link>
+        <Link to="/sobre">Sobre nós</Link>
+        {user && (
+          <Link className="contato" to="/conteudo/criar">
+            Postar
+          </Link>
+        )}
       </ul>
     </StyledHeader>
   )
