@@ -8,6 +8,7 @@ import amarelo from '../../../public/img/amarelo.jpg'
 //Components
 import Atuacao from '../../components/Atuacao'
 import Sobre from '../../components/Sobre'
+import Footer from '../../components/Footer'
 
 function Home() {
   return (
@@ -17,13 +18,12 @@ function Home() {
         <h1>
           Não exija dos outros, qualidades que ainda não possui.
           <br /> <span>Chico Xavier</span>
+          <p>Centro Espírita Teles de Menezes</p>
         </h1>
       </C.Hero>
       <Atuacao />
       <Sobre />
-      <C.Footer>
-        <Link to="/login">Admin</Link>
-      </C.Footer>
+      <Footer />
     </C.Container>
   )
 }

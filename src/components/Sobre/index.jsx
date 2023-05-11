@@ -1,12 +1,10 @@
 import * as C from './style'
 
 import about from '../../../public/img/about.jpg'
-import amarelo from '../../../public/img/amarelo.jpg'
 
 function Sobre() {
   return (
     <C.Container>
-      <img className="amarelo" src={amarelo} alt="amarelo" />
       <C.Content>
         <img src={about} alt="exemplo" />
         <div className="texto">

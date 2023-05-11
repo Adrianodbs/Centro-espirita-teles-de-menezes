@@ -3,15 +3,6 @@ import styled from 'styled-components'
 export const Container = styled.div`
   background-color: #fef4e7;
   width: 100%;
-
-  .amarelo {
-    position: absolute;
-    width: 100%;
-    height: 40px;
-    object-fit: cover;
-    top: 0;
-    z-index: 1;
-  }
 `
 
 export const Content = styled.div`

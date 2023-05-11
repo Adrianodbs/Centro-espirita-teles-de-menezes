@@ -38,7 +38,14 @@ export const Hero = styled.div`
         font-size: 20px;
       }
     }
+
+    p {
+      font-size: 16px;
+      margin-top: 40px;
+
+      @media (max-width: 760px) {
+        font-size: 14px;
+      }
+    }
   }
 `
-
-export const Footer = styled.footer``
