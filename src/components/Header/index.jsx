@@ -10,14 +10,9 @@ function Header() {
   const { logout } = useAuthentication()
   return (
     <StyledHeader>
-      <StyledLogo>
-        <h3>Centro espírita Teles de Menezes</h3>
-      </StyledLogo>
-
       <ul>
         <Link to="/">Início</Link>
         <Link to="/conteudo">Conteúdo</Link>
-        <Link to="/sobre">Sobre nós</Link>
         {user && (
           <Link className="contato" to="/conteudo/criar">
             Postar
@@ -36,7 +31,7 @@ function Header() {
 const StyledHeader = styled.header`
   height: 40px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 0 60px;
   background-color: transparent;
@@ -47,8 +42,8 @@ const StyledHeader = styled.header`
     padding: 0 20px;
   }
 
-  @media (max-width: 560px) {
-    justify-content: center;
+  @media (max-width: 500px) {
+    padding: 0 5px;
   }
 
   ul {
@@ -57,6 +52,10 @@ const StyledHeader = styled.header`
 
     @media (max-width: 760px) {
       gap: 10px;
+    }
+
+    @media (max-width: 500px) {
+      gap: 5px;
     }
   }
 
@@ -75,32 +74,28 @@ const StyledHeader = styled.header`
     }
   }
 
+  button {
+    color: ${p => p.theme.primario};
+    background-color: #fff;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.2s;
+    padding: 5px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    @media (max-width: 760px) {
+      font-size: 14px;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
   .contato {
     background-color: ${p => p.theme.primario};
     color: #fff;
     border-radius: 4px;
-  }
-`
-
-const StyledLogo = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  @media (max-width: 560px) {
-    display: none;
-  }
-  h3 {
-    letter-spacing: 2px;
-    color: #fff;
-
-    @media (max-width: 760px) {
-      font-size: 14px;
-    }
-  }
-
-  img {
-    width: 40px;
   }
 `
 

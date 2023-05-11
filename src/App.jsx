@@ -10,7 +10,6 @@ import { useAuthentication } from './hooks/useAuthentication'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Conteudo from './pages/Conteudo'
-import Sobre from './pages/Sobre'
 import CreatePost from './pages/CreatePost'
 import Dashboard from './pages/Dashboard'
 
@@ -47,7 +46,6 @@ function App() {
               element={!user ? <Login /> : <Navigate to="/" />}
             />
             <Route path="/conteudo" element={<Conteudo />} />
-            <Route path="/sobre" element={<Sobre />} />
             <Route
               path="/conteudo/criar"
               element={user ? <CreatePost /> : <Navigate to="/login" />}

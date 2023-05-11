@@ -7,6 +7,7 @@ import amarelo from '../../../public/img/amarelo.jpg'
 
 //Components
 import Atuacao from '../../components/Atuacao'
+import Sobre from '../../components/Sobre'
 
 function Home() {
   return (
@@ -19,6 +20,7 @@ function Home() {
         </h1>
       </C.Hero>
       <Atuacao />
+      <Sobre />
       <C.Footer>
         <Link to="/login">Admin</Link>
       </C.Footer>
