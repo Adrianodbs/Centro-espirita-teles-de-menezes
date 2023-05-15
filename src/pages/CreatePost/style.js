@@ -41,7 +41,7 @@ export const Content = styled.div`
 
   form {
     gap: 10px;
-    max-width: 500px;
+    max-width: 900px;
     width: 90%;
   }
 
@@ -55,14 +55,21 @@ export const Content = styled.div`
     margin-bottom: 5px;
   }
 
-  input {
-    max-width: 400px;
+  input,
+  textarea {
+    max-width: 800px;
     width: 90%;
     height: 32px;
     border: none;
     border-radius: 4px;
     padding-left: 10px;
     margin-bottom: 20px;
+  }
+
+  textarea {
+    resize: none;
+    height: 150px;
+    padding: 10px;
   }
 
   button {

@@ -44,13 +44,13 @@ function CreatePost() {
           </label>
           <label>
             <span>Conteúdo:</span>
-            <input
+            <textarea
               type="text"
               required
               value={body}
               placeholder="Coloque aqui o conteúdo"
               onChange={e => setBody(e.target.value)}
-            />
+            ></textarea>
           </label>
           <label>
             <span>Tags:</span>
@@ -62,7 +62,7 @@ function CreatePost() {
               onChange={e => setTags(e.target.value)}
             />
           </label>
-          <button>Publicar</button>
+          <button type="submit">Publicar</button>
         </form>
       </C.Content>
     </C.Container>
