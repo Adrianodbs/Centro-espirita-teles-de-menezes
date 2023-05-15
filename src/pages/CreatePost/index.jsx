@@ -3,6 +3,7 @@ import amarelo from '../../../public/img/amarelo.jpg'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuthValue } from '../../context/AuthContext'
+import { useInsertDocument } from '../../hooks/useInsertDocument'
 
 function CreatePost() {
   const [title, setTitle] = useState('')
@@ -11,8 +12,29 @@ function CreatePost() {
   const [tags, setTags] = useState('')
   const [formError, setFormError] = useState('')
 
+  const { user } = useAuthValue()
+
+  const { insertDocument, response } = useInsertDocument('posts')
+
   function handleSubmit(e) {
     e.preventDefault()
+    setFormError('')
+
+    //Validate URL
+
+    //Criar array de Tags
+
+    //Checar todos os valores
+
+    insertDocument({
+      title,
+      image,
+      body,
+      tags,
+      uid: user.uid
+    })
+
+    //redirect to home page
   }
 
   return (
@@ -62,7 +84,9 @@ function CreatePost() {
               onChange={e => setTags(e.target.value)}
             />
           </label>
-          <button type="submit">Publicar</button>
+          {!response.loading && <button type="submit">Publicar</button>}
+          {response.loading && <button type="submit">Aguarde...</button>}
+          {response.error && <p>{response.error}</p>}
         </form>
       </C.Content>
     </C.Container>
