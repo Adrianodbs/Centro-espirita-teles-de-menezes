@@ -1,5 +1,6 @@
 import { useNavigate, Link } from 'react-router-dom'
 import { useState } from 'react'
+import amarelo from '../../../public/img/amarelo.jpg'
 
 import * as C from './style'
 import { useFetchDocuments } from '../../hooks/useFetchDocuments'
@@ -13,6 +14,7 @@ function Conteudo() {
   }
   return (
     <C.Container>
+      <img src={amarelo} alt="banner" className="banner" />
       <C.Header>
         <h1>Veja os nossos posts mais recentes!</h1>
         <form onSubmit={handleSubmit}>
@@ -29,12 +31,14 @@ function Conteudo() {
         {loading && <p>Carregando...</p>}
         {posts &&
           posts.map(post => (
-            <div key={post.id}>
+            <div key={post.id} className="post">
               <h3>{post.title}</h3>
               <img src={post.image} alt={post.title} />
               <p>{post.body}</p>
               {post.tagsArray.map(tag => (
-                <span>{tag}</span>
+                <div key={tag} className="tag">
+                  <span>{tag}</span>
+                </div>
               ))}
             </div>
           ))}
