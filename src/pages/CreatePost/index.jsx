@@ -12,6 +12,8 @@ function CreatePost() {
   const [tags, setTags] = useState('')
   const [formError, setFormError] = useState('')
 
+  const navigate = useNavigate()
+
   const { user } = useAuthValue()
 
   const { insertDocument, response } = useInsertDocument('posts')
@@ -21,20 +23,32 @@ function CreatePost() {
     setFormError('')
 
     //Validate URL
+    try {
+      new URL(image)
+    } catch (error) {
+      setFormError('A imagem precisa ser uma URL.')
+    }
 
     //Criar array de Tags
+    const tagsArray = tags.split(',').map(tag => tag.trim().toLowerCase())
 
     //Checar todos os valores
+    if (!title || !image || !tags || !body) {
+      setFormError('Por favor preencha todos os campos!')
+    }
+
+    if (formError) return
 
     insertDocument({
       title,
       image,
       body,
-      tags,
+      tagsArray,
       uid: user.uid
     })
 
     //redirect to home page
+    navigate('/conteudo')
   }
 
   return (
@@ -87,6 +101,7 @@ function CreatePost() {
           {!response.loading && <button type="submit">Publicar</button>}
           {response.loading && <button type="submit">Aguarde...</button>}
           {response.error && <p>{response.error}</p>}
+          {formError && <p>{formError}</p>}
         </form>
       </C.Content>
     </C.Container>
