@@ -2,10 +2,11 @@ import { useNavigate, Link } from 'react-router-dom'
 import { useState } from 'react'
 
 import * as C from './style'
+import { useFetchDocuments } from '../../hooks/useFetchDocuments'
 
 function Conteudo() {
   const [query, setQuery] = useState('')
-  const [posts, setPosts] = useState([])
+  const { documents: posts, loading } = useFetchDocuments('posts')
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -25,6 +26,18 @@ function Conteudo() {
       </C.Header>
 
       <C.Content>
+        {loading && <p>Carregando...</p>}
+        {posts &&
+          posts.map(post => (
+            <div key={post.id}>
+              <h3>{post.title}</h3>
+              <img src={post.image} alt={post.title} />
+              <p>{post.body}</p>
+              {post.tagsArray.map(tag => (
+                <span>{tag}</span>
+              ))}
+            </div>
+          ))}
         {posts && posts.length === 0 && (
           <div className="noPosts">
             <h3>Não foram encontrados posts</h3>
