@@ -99,6 +99,8 @@ export const Content = styled.div`
       font-weight: 400;
       margin-top: 30px;
       padding: 15px;
+      white-space: pre-wrap;
+      align-self: flex-start;
     }
 
     .tag {

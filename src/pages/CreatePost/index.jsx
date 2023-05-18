@@ -9,7 +9,6 @@ function CreatePost() {
   const [title, setTitle] = useState('')
   const [image, setImage] = useState('')
   const [body, setBody] = useState('')
-  const [tags, setTags] = useState('')
   const [formError, setFormError] = useState('')
 
   const navigate = useNavigate()
@@ -29,11 +28,8 @@ function CreatePost() {
       setFormError('A imagem precisa ser uma URL.')
     }
 
-    //Criar array de Tags
-    const tagsArray = tags.split(',').map(tag => tag.trim().toLowerCase())
-
     //Checar todos os valores
-    if (!title || !image || !tags || !body) {
+    if (!title || !image || !body) {
       setFormError('Por favor preencha todos os campos!')
     }
 
@@ -43,7 +39,6 @@ function CreatePost() {
       title,
       image,
       body,
-      tags: tagsArray,
       uid: user.uid
     })
 
@@ -87,16 +82,6 @@ function CreatePost() {
               placeholder="Coloque aqui o conteúdo"
               onChange={e => setBody(e.target.value)}
             ></textarea>
-          </label>
-          <label>
-            <span>Tags:</span>
-            <input
-              type="text"
-              required
-              value={tags}
-              placeholder="Insira as tags separadas por vírgula"
-              onChange={e => setTags(e.target.value)}
-            />
           </label>
           {!response.loading && <button type="submit">Publicar</button>}
           {response.loading && <button type="submit">Aguarde...</button>}
