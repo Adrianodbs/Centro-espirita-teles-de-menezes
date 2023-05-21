@@ -13,6 +13,7 @@ import Conteudo from './pages/Conteudo'
 import CreatePost from './pages/CreatePost'
 import Dashboard from './pages/Dashboard'
 import Post from './pages/Post/Post'
+import EditPost from './pages/EditPost'
 
 //context
 import { AuthProvider } from './context/AuthContext'
@@ -55,6 +56,10 @@ function App() {
             <Route
               path="/dashboard"
               element={user ? <Dashboard /> : <Navigate to="/login" />}
+            />
+            <Route
+              path="/posts/edit/:id"
+              element={user ? <EditPost /> : <Navigate to="/login" />}
             />
           </Routes>
         </BrowserRouter>
