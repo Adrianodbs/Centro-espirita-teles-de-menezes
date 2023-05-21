@@ -12,6 +12,7 @@ import Login from './pages/Login'
 import Conteudo from './pages/Conteudo'
 import CreatePost from './pages/CreatePost'
 import Dashboard from './pages/Dashboard'
+import Post from './pages/Post/Post'
 
 //context
 import { AuthProvider } from './context/AuthContext'
@@ -46,6 +47,7 @@ function App() {
               element={!user ? <Login /> : <Navigate to="/" />}
             />
             <Route path="/conteudo" element={<Conteudo />} />
+            <Route path="/posts/:id" element={<Post />} />
             <Route
               path="/conteudo/criar"
               element={user ? <CreatePost /> : <Navigate to="/login" />}
