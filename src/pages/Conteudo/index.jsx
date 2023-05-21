@@ -1,13 +1,10 @@
-import { useNavigate, Link } from 'react-router-dom'
-import { useState } from 'react'
 import amarelo from '../../../public/img/amarelo.jpg'
 
 import * as C from './style'
 import { useFetchDocuments } from '../../hooks/useFetchDocuments'
 
 function Conteudo() {
-  const [query, setQuery] = useState('')
-  const { documents: posts, loading } = useFetchDocuments('posts')
+  const { documents: posts } = useFetchDocuments('posts')
 
   return (
     <C.Container>
@@ -17,7 +14,6 @@ function Conteudo() {
       </C.Header>
 
       <C.Content>
-        {loading && <p>Carregando...</p>}
         {posts && posts.length > 0 ? (
           posts.map(post => (
             <div key={post.id} className="post">
