@@ -3,7 +3,7 @@ import amarelo from '../../../public/img/amarelo.jpg'
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useAuthValue } from '../../context/AuthContext'
-import { useInsertDocument } from '../../hooks/useInsertDocument'
+import { useUpdateDocument } from '../../hooks/useUpdateDocument'
 
 import { useFetchDocument } from '../../hooks/useFetchDocument'
 
@@ -28,7 +28,7 @@ function EditPost() {
 
   const { user } = useAuthValue()
 
-  const { insertDocument, response } = useInsertDocument('posts')
+  const { updateDocument, response } = useUpdateDocument('posts')
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -48,15 +48,17 @@ function EditPost() {
 
     if (formError) return
 
-    insertDocument({
+    const data = {
       title,
       image,
       body,
       uid: user.uid
-    })
+    }
+
+    updateDocument(id, data)
 
     //redirect to home page
-    navigate('/conteudo')
+    navigate('/dashboard')
   }
 
   return (
