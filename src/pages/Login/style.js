@@ -33,6 +33,11 @@ export const Form = styled.form`
   justify-content: center;
   align-items: center;
   gap: 20px;
+
+  button {
+    height: 32px;
+    padding: 5px 20px;
+  }
 `
 
 export const Label = styled.label`

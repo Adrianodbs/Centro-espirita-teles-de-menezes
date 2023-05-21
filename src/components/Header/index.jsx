@@ -13,23 +13,43 @@ function Header() {
 
   const { logout } = useAuthentication()
 
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
+
+  const closeMenu = () => {
+    setIsOpen(false)
+  }
+
   return (
     <C.StyledHeader>
       <div className={`${isOpen ? 'menu open' : 'menu close'}`}>
         <ul>
-          <Link to="/">Início</Link>
-          <Link to="/conteudo">Conteúdo</Link>
-          {user && <Link to="/dashboard">Dashboard</Link>}
+          <Link to="/" onClick={closeMenu}>
+            Início
+          </Link>
+          <Link to="/conteudo" onClick={closeMenu}>
+            Conteúdo
+          </Link>
           {user && (
-            <Link className="contato" to="/conteudo/criar">
+            <Link to="/dashboard" onClick={closeMenu}>
+              Dashboard
+            </Link>
+          )}
+          {user && (
+            <Link className="contato" to="/conteudo/criar" onClick={closeMenu}>
               Postar
             </Link>
           )}
 
           {user && (
             <li>
-              <button onClick={logout}>Sair</button>
+              <button
+                onClick={() => {
+                  logout()
+                  closeMenu()
+                }}
+              >
+                Sair
+              </button>
             </li>
           )}
         </ul>
