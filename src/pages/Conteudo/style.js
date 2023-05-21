@@ -19,7 +19,7 @@ export const Container = styled.div`
 `
 
 export const Header = styled.div`
-  z-index: 99;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,6 +70,10 @@ export const Content = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+
+  @media (max-width: 450px) {
+    margin-top: 30px;
+  }
 
   .post {
     display: flex;
