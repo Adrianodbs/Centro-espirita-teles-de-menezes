@@ -1,47 +1,55 @@
 import * as C from './styles'
 import { Link } from 'react-router-dom'
+import amarelo from '../../../public/img/amarelo.jpg'
 
 import { useAuthValue } from '../../context/AuthContext'
 import { useFetchDocuments } from '../../hooks/useFetchDocuments'
+import { useDeleteDocument } from '../../hooks/UseDeleteDocument'
 
 function Dashboard() {
   const { user } = useAuthValue()
   const uid = user.uid
 
-  const { documents: posts } = useFetchDocuments('posts', null, uid)
-  return (
-    <div>
-      <h2>Dashboard</h2>
-      <p>Gerencie os seus posts</p>
-      {posts && posts.length === 0 ? (
-        <div>
-          <p>Não foram encontrados posts</p>
-          <Link to="/posts/create">Criar primeiro post</Link>
-        </div>
-      ) : (
-        <div>
-          <span>Título</span>
-          <span>Ações</span>
-        </div>
-      )}
+  const { documents: posts, loading } = useFetchDocuments('posts', null, uid)
 
-      {posts &&
-        posts.map(post => (
-          <div key={post.id}>
-            <p>{post.title}</p>
-            <div>
-              <Link to={`/posts/${post.id}`}>Ver</Link>
-              <Link to={`/posts/edit/${post.id}`}>Editar</Link>
-              <button
-                onClick={() => deleteDocument(post.id)}
-                className="btn btn-outline btn-danger"
-              >
-                Excluir
-              </button>
+  const { deleteDocument } = useDeleteDocument('posts')
+
+  if (loading) {
+    return <p>Carregando...</p>
+  }
+
+  return (
+    <C.Container>
+      <img src={amarelo} alt="background" className="banner" />
+      <C.Content>
+        <C.ContentHeader>
+          <p className="title">Gerencie os seus posts</p>
+          {posts && posts.length === 0 ? (
+            <div className="noPosts">
+              <p>Não foram encontrados posts</p>
+              <Link to="/conteudo/criar">Criar primeiro post</Link>
             </div>
-          </div>
-        ))}
-    </div>
+          ) : (
+            <div className="lineHeader">
+              <span>Título</span>
+              <span>Ações</span>
+            </div>
+          )}
+        </C.ContentHeader>
+
+        {posts &&
+          posts.map(post => (
+            <div key={post.id} className="contentPost">
+              <p>{post.title}</p>
+              <div className="btn">
+                <Link to={`/posts/${post.id}`}>Ver</Link>
+                <Link to={`/posts/edit/${post.id}`}>Editar</Link>
+                <button onClick={() => deleteDocument(post.id)}>Excluir</button>
+              </div>
+            </div>
+          ))}
+      </C.Content>
+    </C.Container>
   )
 }
 

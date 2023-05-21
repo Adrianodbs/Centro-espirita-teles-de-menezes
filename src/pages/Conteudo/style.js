@@ -84,6 +84,7 @@ export const Content = styled.div`
     background-color: #fafafa;
     width: 80%;
     border-radius: 8px;
+    padding: 20px;
 
     h3 {
       color: ${p => p.theme.primario};
