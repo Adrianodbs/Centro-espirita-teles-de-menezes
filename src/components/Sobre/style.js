@@ -27,7 +27,7 @@ export const Content = styled.div`
     color: #6696ec;
     font-size: 20px;
     background-color: #face29;
-    width: 110px;
+    min-width: 110px;
     text-align: center;
     padding: 10px 0;
   }
