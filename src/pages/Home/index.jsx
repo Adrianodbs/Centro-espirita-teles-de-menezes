@@ -9,6 +9,7 @@ import amarelo from '../../../public/img/amarelo.jpg'
 import Atuacao from '../../components/Atuacao'
 import Sobre from '../../components/Sobre'
 import Footer from '../../components/Footer'
+import Cards from '../../components/Cards'
 
 function Home() {
   return (
@@ -23,6 +24,7 @@ function Home() {
       </C.Hero>
       <Atuacao />
       <Sobre />
+      <Cards />
       <Footer />
     </C.Container>
   )
