@@ -10,9 +10,10 @@ function Footer() {
           <h1>Centro Espírita Teles de Menezes</h1>
 
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, nostrud consectetur adipiscing elit.
+            O estudo constante da Doutrina Espírita com base nas obras de Allan
+            Kardec e o propósito permanente de colocar em prática os seus
+            ensinos são fundamentais para a correta execução de toda atividade
+            espírita.
           </p>
 
           <div className="redes">
@@ -31,8 +32,8 @@ function Footer() {
         <C.Contact>
           <h2>Contato</h2>
           <p>Rua Coronel Tamarindo, Mundo Novo, Bahia</p>
-          <p>E-mail: xxxxxx@xxxxxxxx</p>
-          <p>Telefone:(74)999999-9999</p>
+          <p>E-mail: centroespiritatelesdemenezes@gmail.com</p>
+          <p>Telefone:(74) 999646236</p>
         </C.Contact>
       </C.TopContainer>
 
