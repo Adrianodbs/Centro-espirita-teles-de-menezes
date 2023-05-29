@@ -14,7 +14,13 @@ function Sobre() {
             O Centro Espírita Teles de Menezes é uma instituição espiritualista
             localizada em Mundo Novo - Bahia e foi fundado no dia 16 de março de
             1983, após um período de inatividade, o centro foi reativado em 29
-            de junho de 1988.
+            de junho de 1988. <br /> O Centro Espírita Teles de Menezes é uma
+            instituição que tem como base os princípios da doutrina espírita,
+            fundada por Allan Kardec. O espiritismo é uma corrente filosófica e
+            religiosa que busca promover o estudo e a prática dos ensinamentos
+            trazidos pelos espíritos através da mediunidade. Essas práticas
+            incluem estudos, palestras, atendimentos fraternos e outras
+            atividades voltadas para o desenvolvimento espiritual e a caridade.
           </p>
           <br />
           <h5>Membros fundadores</h5>

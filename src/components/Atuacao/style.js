@@ -10,6 +10,11 @@ export const Atuacao = styled.section`
   width: 90%;
   max-width: 900px;
 
+  h5 {
+    text-align: center;
+    font-size: 16px;
+  }
+
   .atuacaoContent {
     display: flex;
     flex-wrap: wrap;
@@ -23,7 +28,8 @@ export const Atuacao = styled.section`
   .contentItem {
     display: flex;
     flex-direction: column;
-    width: 250px;
+    width: 200px;
+    height: 200px;
     padding: 10px;
 
     @media (max-width: 770px) {
