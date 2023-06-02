@@ -18,7 +18,7 @@ function Conteudo() {
           posts.map(post => (
             <div key={post.id} className="post">
               <h3>{post.title}</h3>
-              <img src={post.image} alt={post.title} />
+              {post.image ? <img src={post.image} alt={post.title} /> : <p></p>}
               <p>{post.body}</p>
             </div>
           ))

@@ -17,13 +17,17 @@ function Footer() {
           </p>
 
           <div className="redes">
-            <a href="#" target="_blank">
+            <a
+              href="https://www.instagram.com/centroespiritatelesdemenezes/"
+              target="_blank"
+            >
               <BsInstagram />
             </a>
-            <a href="#" target="_blank">
-              <BsFacebook />
-            </a>
-            <a href="#" target="_blank">
+
+            <a
+              href="https://www.youtube.com/@centroespiritatelesdemenez6640"
+              target="_blank"
+            >
               <BsYoutube />
             </a>
           </div>

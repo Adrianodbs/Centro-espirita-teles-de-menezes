@@ -84,7 +84,6 @@ function EditPost() {
                 <span>URL da imagem:</span>
                 <input
                   type="text"
-                  required
                   value={image}
                   placeholder="Coloque o URL da imagem aqui"
                   onChange={e => setImage(e.target.value)}

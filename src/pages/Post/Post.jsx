@@ -15,7 +15,7 @@ function Post() {
           {post && (
             <>
               <h1>{post.title}</h1>
-              <img src={post.image} alt={post.title} />
+              {post.image ? <img src={post.image} alt={post.title} /> : <p></p>}
               <p>{post.body}</p>
             </>
           )}

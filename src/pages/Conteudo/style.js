@@ -106,6 +106,7 @@ export const Content = styled.div`
       padding: 15px;
       white-space: pre-wrap;
       align-self: flex-start;
+      line-height: 150%;
     }
 
     .tag {

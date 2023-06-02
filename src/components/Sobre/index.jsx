@@ -1,12 +1,12 @@
 import * as C from './style'
 
-import about from '../../../public/img/about.jpg'
+import palestra from '../../../public/img/palestra.jpeg'
 
 function Sobre() {
   return (
     <C.Container>
       <C.Content>
-        <img src={about} alt="exemplo" />
+        <img src={palestra} alt="exemplo" />
         <div className="texto">
           <h5>Sobre nós</h5>
           <h2>Centro espírita Teles de Menezes.</h2>
