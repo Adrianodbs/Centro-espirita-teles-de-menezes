@@ -19,6 +19,17 @@ function Conteudo() {
             <div key={post.id} className="post">
               <h3>{post.title}</h3>
               {post.image ? <img src={post.image} alt={post.title} /> : <p></p>}
+              {post.videoUrl ? (
+                <iframe
+                  title={post.title}
+                  width="560"
+                  height="315"
+                  src={post.videoUrl}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              ) : null}
               <p>{post.body}</p>
             </div>
           ))

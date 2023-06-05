@@ -9,6 +9,7 @@ function CreatePost() {
   const [title, setTitle] = useState('')
   const [image, setImage] = useState('')
   const [body, setBody] = useState('')
+  const [videoUrl, setVideoUrl] = useState('')
   const [formError, setFormError] = useState('')
 
   const navigate = useNavigate()
@@ -29,7 +30,7 @@ function CreatePost() {
     }
 
     //Checar todos os valores
-    if (!title || !image || !body) {
+    if (!title || !body) {
       setFormError('Por favor preencha todos os campos!')
     }
 
@@ -38,6 +39,7 @@ function CreatePost() {
     insertDocument({
       title,
       image,
+      videoUrl,
       body,
       uid: user.uid
     })
@@ -70,6 +72,15 @@ function CreatePost() {
               value={image}
               placeholder="Coloque o URL da imagem aqui"
               onChange={e => setImage(e.target.value)}
+            />
+          </label>
+          <label>
+            <span>URL do vídeo do YouTube:</span>
+            <input
+              type="text"
+              value={videoUrl}
+              placeholder="Coloque o URL do vídeo do YouTube aqui"
+              onChange={e => setVideoUrl(e.target.value)}
             />
           </label>
           <label>
