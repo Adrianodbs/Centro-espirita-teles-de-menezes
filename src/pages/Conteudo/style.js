@@ -113,5 +113,12 @@ export const Content = styled.div`
       display: flex;
       flex-direction: row;
     }
+
+    .video {
+      margin-top: 20px;
+      max-width: 560px;
+      width: 90%;
+      aspect-ratio: 16/9;
+    }
   }
 `

@@ -9,6 +9,7 @@ function Conteudo() {
   function extractVideoId(url) {
     const regex =
       /(?:\/|%3D|v=|vi=|v%3D|youtu.be%2F|\/embed\/|\/v\/|https:\/\/www.youtube.com\/watch\?v=|https:\/\/www.youtube.com\/embed\/|https:\/\/youtu.be\/|https:\/\/www.youtube.com\/v\/|https:\/\/m.youtube.com\/watch?v=)([^#\&\?]*).*/
+
     const match = url.match(regex)
     return match && match[1] ? match[1] : null
   }
@@ -26,11 +27,12 @@ function Conteudo() {
             <div key={post.id} className="post">
               <h3>{post.title}</h3>
               {post.image ? <img src={post.image} alt={post.title} /> : <p></p>}
+
+              <p>{post.body}</p>
               {post.videoUrl ? (
                 <iframe
+                  className="video"
                   title={post.title}
-                  width="560"
-                  height="315"
                   src={`https://www.youtube.com/embed/${extractVideoId(
                     post.videoUrl
                   )}`}
@@ -39,7 +41,6 @@ function Conteudo() {
                   allowFullScreen
                 ></iframe>
               ) : null}
-              <p>{post.body}</p>
             </div>
           ))
         ) : (
