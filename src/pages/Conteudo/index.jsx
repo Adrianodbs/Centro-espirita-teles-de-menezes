@@ -6,6 +6,13 @@ import { useFetchDocuments } from '../../hooks/useFetchDocuments'
 function Conteudo() {
   const { documents: posts } = useFetchDocuments('posts')
 
+  function extractVideoId(url) {
+    const regex =
+      /(?:\/|%3D|v=|vi=|v%3D|youtu.be%2F|\/embed\/|\/v\/|https:\/\/www.youtube.com\/watch\?v=|https:\/\/www.youtube.com\/embed\/|https:\/\/youtu.be\/|https:\/\/www.youtube.com\/v\/|https:\/\/m.youtube.com\/watch?v=)([^#\&\?]*).*/
+    const match = url.match(regex)
+    return match && match[1] ? match[1] : null
+  }
+
   return (
     <C.Container>
       <img src={amarelo} alt="banner" className="banner" />
@@ -24,7 +31,9 @@ function Conteudo() {
                   title={post.title}
                   width="560"
                   height="315"
-                  src={post.videoUrl}
+                  src={`https://www.youtube.com/embed/${extractVideoId(
+                    post.videoUrl
+                  )}`}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
